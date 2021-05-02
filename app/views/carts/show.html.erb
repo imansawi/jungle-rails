@@ -1,5 +1,18 @@
 <section class="cart-show">
 
+<%if empty?%>
+    <section class="empty">
+      <section>
+        <h2 class="alert alert-info" role="alert">My Cart is empty!! To continue shopping Go to
+        <%= link_to 'Home', :root, class:"alert-link"%>!
+        </h2>
+      </section>
+      <section>
+        <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-info' %>
+      </section>
+    </section>
+  <% else %>
+
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
@@ -49,4 +62,5 @@
     </div>
   </div>
 
+  <% end %>  
 </section>
