@@ -1,2 +1,58 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+# <h1>Admin::Dashboard#show</h1>
+# <p>Find me in app/views/admin/dashboard/show.html.erb</p>
+# Show only the number of categories and number of products in each one 
+
+<section class="admin-categories-index">
+
+  <header class="page-header">
+    <h1>Admin &raquo; Dashboard</h1>
+  </header>
+
+  <div class="well">To see more details, or to add/delete a category/product, click on the<strong> Details </strong>icon.
+    
+  </div>
+
+  <div class="panel panel-default categories">
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th >Type</th>
+          <th class="text-center">Total Number</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+  
+        <td>
+          <h4>Categories</h4>    
+        </td>
+
+        <td class="text-center">
+          <h4><%= @num_categories %></h4>
+
+        </td>
+        <td class="text-center">
+          <%= link_to ' Details', [:admin, :categories], class: 'btn btn-info' %>
+        </td>
+      </tr>
+      <tr>  
+        <td>
+          <h4>Products</h4>    
+        </td>
+
+        <td class="text-center">
+          <h4><%= @num_products %></h4>
+
+        </td>
+        <td class="text-center">
+          <%= link_to ' Details', [:admin, :products], class: 'btn btn-info' %>
+        </td>
+      </tr>
+       </tbody>
+    </table>
+
+  </div>
+
+</section>
