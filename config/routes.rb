@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :categories, only: [:show]
+  resource :about, only: [:show]
 
   resource :cart, only: [:show] do
     post   :add_item
@@ -20,10 +21,17 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
+<<<<<<< HEAD
     resources :categories, except: [:edit, :update, :show, :destroy]
   end
 
   resources :sessions, only: [:new, :create, :destroy ]
+=======
+    resources :categories, only: [:new, :index]
+  end
+
+
+>>>>>>> feature/about-page
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
